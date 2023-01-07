@@ -1,0 +1,55 @@
+
+       
+     <link rel="stylesheet" href="/public/css/profile_admin.css">
+    <div class="profile-bg-1">
+        <div class="profile-secs">
+            <div class="profile-sec-a">
+                <div class="outward-links">
+                    <a href="/">HOME</a> <div class="my-orders">MY ORDERS</div> <a href="/logout">LOGOUT</a>
+                </div>
+            </div>
+
+            {{#if oders}}
+            
+            {{#each oders}}
+            <div class="order-wraper">
+            <div class="order-top"><span class="order-span-left">paymentId :</span> <span class="order-span-right">{{this.paymentId}}</span></div>
+            <div class="ptofile-sec-b">
+              {{#each this.items}}
+                <div class="order-info">
+                  
+                    <div>
+                    <div class="item-imgi">
+                        <img src="/public/upload/{{this.item.filename}}" alt="Item image">
+                    </div>
+                    <div class="order-items">
+                        <div><span class="order-span-left">Name :</span> <span class="order-span-right">{{this.item.name}}</span></div>
+                        <div><span class="order-span-left">delivery :</span> <span class="order-span-right"> within 1 to 2 weeks</span></div>
+                        <div><span class="order-span-left">ProductId :</span> <span class="order-span-right">{{this.item._id}}</span></div>
+                        <div><span class="order-span-left">payment :</span> <span class="order-span-right">paid N {{this.item.price }} / <span class="badge">/ 1</span></span></div>
+                    </div>
+                    </div>
+               
+                </div>
+                
+                {{/each}}
+                <div class="order-top"><span class="order-span-left">Total Amount :</span> <span class="order-span-right">{{this.cart.totalPrice}}</span>
+                <span class="order-span-left">Total Quantity :</span> <span class="order-span-right badge bg-dark text-light">{{this.cart.totalQty}}</span>
+                </div>
+                
+            </div>
+            </div>
+            {{/each}}
+            {{else}}
+             <div><h1>No have no orders ! </h1></div>
+            {{/if}}
+
+        </div>
+    </div>
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+
+
+
+
+<div class="farent-box">
+{{#each image}}
+{{#if filename}}
+         
+        <div class="first-box">
+            <img src="/public/upload/{{filename}}" class="img img-fluid sing-img" alt="">
+            
+            <div class="subDwtails">
+                <p>{{name}}</p>
+                <div class="like-err"> <span class="like-erra"></span> <span class="cancel"></span></div>
+              <button id="like" data-id="{{ this._id }}">  <i class="fa fa-heart m-3"></i> </button><span class="likes-count"> {{this.likes.length}} </span>
+                <i class="fa fa-eye m-3"></i>5
+                <span class="ml-5"><del style="text-decoration-style: double;">N </del> {{price}}</span>
+                
+             </div>
+            <a href="/carts/{{this._id}}" class="sing-btn">Add to cart</a>
+        </div>
+  {{/if}}
+{{/each}}
+
+        <div class="second-box">
+            <p class="sing-description">
+               {{#each image}} {{this.description}} {{/each}}
+            </p>
+            <div class="u-may-like">
+                    <p>similar products that you may like</p>
+                    <div class="image-loop">
+                       {{#each picked}} 
+                       <div class="suggest">
+                        <a href="/images/{{ this.uniqueId }}"> <img src="/public/upload/{{this.filename}}" alt="" class="img img-fluid">
+                       </a>
+                       <p>{{this.price}}</p>
+                       </div>
+                    {{/each}}
+                    </div>
+                </div>
+        </div>
+</div>
+
+
+
+
+{{!-- 
+    <div class="farent-box">
+        <div class="first-box">
+            <img src="./images/logo9_5_183714.png" class="img img-fluid sing-img" alt="">
+            <div class="subDwtails">
+                <p>The product's name</p>
+                <i class="fa fa-heart m-3"></i>3
+                <i class="fa fa-eye m-3"></i>5
+                <span class="ml-5"><del style="text-decoration-style: double;">N </del> 3000</span>
+                
+            </div>
+            <button class="sing-btn">Add to cart</button>
+        </div>
+        <div class="second-box">
+            <p class="sing-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur 
+                laudantium modi temporibus velit nobis. Sint mollitia minima ducimus doloremque
+            </p>
+            <div class="u-may-like">
+                    <p>similar products that you may like</p>
+                    <div class="image-loop">
+                        <img src="./images/logo9_5_183714.png" alt="" class="img img-fluid">
+                        <img src="./images/logo9.jpeg" alt="" class="img img-fluid">
+                        <img src="./images/Living-Room-Wall-Design-3.jpg" alt="" class="img img-fluid">
+                    </div>
+                </div>
+        </div>
+       
+    </div> --}}

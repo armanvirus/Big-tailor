@@ -1,0 +1,96 @@
+   <header>
+    <div class="navbar navbar-light bg-light shadow-sm fixed-top" id="bar">
+      <div class=" text   grid">
+        <div class="title"> Gigtailor <img src="/public/images/logo9.jpeg" alt=""></div>
+
+        <div class="general-search-bar">
+          <li style="list-style-type:none;" id="search"><i class="fa fa-search"></i> <input type="text" placeholder='Search Here....' class="bg-light" id="searcher"></li>
+        </div>
+
+        <div class="links"> <ul class="n-l">
+          <li><a href="/" class="hea"><i class="fa fa-home"></i>Home</a></li>
+          <li><a href="/cart-list" class="hea"><i class="fa fa-shopping-cart"></i>Cart <span class="badge bg-dark text-light">{{session.cart.totalQty}}</span></a></li>
+          <li><a href="/contact" class="hea"><i class="fa fa-address-book"></i>Contact</a></li>
+          <li><a href="/About" class="hea"> <i class="fa fa-info"></i>About</a></li>
+          <li><a href="#" class="hea" id="account"> <i class="fa fa-user"></i>Profile</a>
+
+          </li>
+          
+        </ul>
+        <div class="log-hide">
+          <div id="singin"><a href="/login/form">Login</a></div>
+          <div id="register"><a href="/singUp/form">Register</a></div>
+        </div>
+        </div>
+
+        <div class="manu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="displayer">
+
+    </div>
+
+    <div class="show-case">
+      <div class="slide">
+        <img src="/public/images/Living-Room-Wall-Design-3.jpg" class="img img-fluid" alt="">
+      </div>
+      <div class="categ">
+        <h4>The best Nigerian online clothing store</h4>
+        <span>Bigtailor the pride of the nation</span>
+        <ul class="categories">
+          <li>All </li>
+          <li>Tailored</li>
+          <li>Yard</li>
+          <li>Watch</li>
+          <li>Shoe</li>
+          <li>Cap</li>
+        </ul>
+      </div> 
+      </div>
+
+      <div class="down-hide">
+        <div class="mobile-nav">
+          <ul>
+            <li class="mobile-list"><a href="#">Home </a> <i class="fa fa-home r-icon" ></i></li>
+            <li class="mobile-list"><a href="/cart-list">Cart</a> <i class="fa fa-shopping-cart r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Contact</a> <i class="fa fa-address-book r-icon"></i></li>
+            <li class="mobile-list"><a href="#">About</a> <i class="fa fa-info r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Profile</a> <i class="fa fa-user r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Login</a> <i class="fa fa-sign-in r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Register</a> <i class="fa fa-sign-in-alt r-icon"></i></li>
+  
+          </ul>
+        </div>
+
+      </div>
+    </header>
+  <!-- The main section -->
+  <main>
+    <section>
+  <div class="products">
+    {{#each product}}
+    <div class="products_list">
+      <a href="/images/{{ this.uniqueId }}"> <img src="public/upload/{{this.filename}}" alt="" class="img img-fluid im pro-image"> </a>
+      <div class="effect"></div>
+      <p class="text text-muted">
+        {{price}}
+      </p>
+    </div>
+    {{/each}}
+  </div>
+  </section>
+  </main>
+  <!-- Footer section -->
+  <footer>
+    <div class=" bg-light  text-dark text-center m-4 p-3 copy-write"> <i class="fas fa-copyright"></i> arman</div>
+  </footer>
+  
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

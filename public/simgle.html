@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.min.css">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+       .farent-box{
+           display: grid;
+           grid-template-columns: 2fr 1fr;
+           text-align: center;
+       }
+    .sing-img{
+        height: 100vw;
+        height: 70vh;
+    }
+    .sing-btn{
+  /* background: #916dd4; */
+  color: #fff;
+  background: rgba(19, 2, 51, 0.8);
+  font-family: cursive;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border-radius: 8px;
+  transition: background-color 3s, color 2.8s;
+}
+.sing-btn:hover{
+background: #b39ddb;
+color: #333;
+}
+.sing-description{
+    text-align: justify;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px 10px 20px 10px;
+    padding: 10px;
+}
+.image-loop{
+    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  grid-gap: 2px;
+  margin: 10px;
+  padding: 20px 10px 11% 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+}
+.second-box{
+    transform: translate(0, 20%);
+}
+.u-may-like p{
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 15px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+@media (max-width: 450px){
+    .first-box{
+            text-align: center;
+        }
+    .sing-img{
+        height: 100vw;
+        height: 70vh;
+    }
+    .sing-btn{
+  /* background: #916dd4; */
+  color: #fff;
+  background: rgba(19, 2, 51, 0.8);
+  font-family: cursive;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border-radius: 8px;
+  transition: background-color 10s;
+}
+.sing-btn:hover{
+background: #b39ddb;
+color: #333;
+}
+.sing-description{
+    text-align: justify;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px 10px 20px 10px;
+    padding: 10px;
+}
+.image-loop{
+    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  grid-gap: 2px;
+  margin: 10px;
+  padding: 20px 10px 11% 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+}
+.u-may-like p{
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 15px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.farent-box{
+    display: block;
+}
+.second-box{
+    transform: translate(0, 0);
+}
+
+}
+    </style>
+</head>
+<body>
+    <div class="farent-box">
+        <div class="first-box">
+            <img src="./images/logo9_5_183714.png" class="img img-fluid sing-img" alt="">
+            <div class="subDwtails">
+                <p>The product's name</p>
+                <i class="fa fa-heart m-3"></i>3
+                <i class="fa fa-eye m-3"></i>5
+                <span class="ml-5"><del style="text-decoration-style: double;">N </del> 3000</span>
+                
+            </div>
+            <button class="sing-btn">Add to cart</button>
+        </div>
+        <div class="second-box">
+            <p class="sing-description">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur 
+                laudantium modi temporibus velit nobis. Sint mollitia minima ducimus doloremque
+            </p>
+            <div class="u-may-like">
+                    <p>similar products that you may like</p>
+                    <div class="image-loop">
+                        <img src="./images/logo9_5_183714.png" alt="" class="img img-fluid">
+                        <img src="./images/logo9.jpeg" alt="" class="img img-fluid">
+                        <img src="./images/Living-Room-Wall-Design-3.jpg" alt="" class="img img-fluid">
+                    </div>
+                </div>
+        </div>
+       
+    </div>
+</body>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="jquery.js"></script>
+    <script src="script/javascript.js"></script>
+</html>

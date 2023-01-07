@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/public/css/profile_admin.css">
+
+
+<div class="text-center body-001">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link " href="/"> <i class="fa fa-home"></i> </a>
+        <a class="nav-link " href="/admin">Admin</a>
+        <a class="nav-link" href="/admin/orders-view">Orders</a>
+        <a class="nav-link active" href="/stats">Statistics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover main">
+      {{#if contacts}}
+       {{#each contacts}}
+     <div class="media text-muted pt-3">
+      <img src="/public/icons/name.png" alt="">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">{{this.userEmail}}</strong>
+        <p>{{this.subject}}</p>
+        <p>{{this.message}}</p>
+      </p>
+    </div>
+    {{/each}}
+
+    {{/if}}
+    
+  </main>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

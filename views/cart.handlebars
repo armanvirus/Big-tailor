@@ -1,0 +1,264 @@
+  <header class="mb-5">
+    <div class="navbar navbar-light bg-light shadow-sm fixed-top" id="bar">
+      <div class=" text   grid">
+        <div class="title"> Gigtailor <img src="/public/images/logo9.jpeg" alt=""></div>
+        <div class="links"> <ul class="n-l">
+          <li id="search"><i class="fa fa-search"></i> <input type="text" placeholder='Search Here....' class="bg-light" id="searcher"></li>
+          <li><a href="/" class="hea"><i class="fa fa-home"></i>Home</a></li>
+          <li><a href="/cart-list" class="hea"><i class="fa fa-shopping-cart"></i>Cart <span class="badge bg-dark text-light">{{session.cart.totalQty}}</span></a></li>
+          <li><a href="/contact" class="hea"><i class="fa fa-address-book"></i>Contact</a></li>
+          <li><a href="/About" class="hea"> <i class="fa fa-info"></i>About</a></li>
+          <li><a href="#" class="hea" id="account"> <i class="fa fa-user"></i>Profile</a>
+
+          </li>
+          
+        </ul>
+        <div class="log-hide">
+          <div id="singin"><a href="/login/form">Login</a></div>
+          <div id="register"><a href="/singUp/form">Register</a></div>
+        </div>
+        </div>
+
+        <div class="manu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="displayer">
+
+    </div>
+
+
+      <div class="down-hide">
+        <div class="mobile-nav">
+          <ul>
+            <li id="search"><i class="fa fa-search"></i> <input type="text" placeholder='Search Here....' class="bg-light"></li>
+            <li class="mobile-list"><a href="#">Home </a> <i class="fa fa-home r-icon" ></i></li>
+            <li class="mobile-list"><a href="/cart-list">Cart</a> <i class="fa fa-shopping-cart r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Contact</a> <i class="fa fa-address-book r-icon"></i></li>
+            <li class="mobile-list"><a href="#">About</a> <i class="fa fa-info r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Profile</a> <i class="fa fa-user r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Login</a> <i class="fa fa-sign-in r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Register</a> <i class="fa fa-sign-in-alt r-icon"></i></li>
+  
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+{{#if products}}
+
+<div class="jakin">
+    <div class="cart-body">
+        <div class="my-cart">My Shopping Cart</div>
+
+        {{!-- cart properties --}}
+
+         {{#each products}}
+
+        <div class="cart-details"> 
+            <div class="cart-product-img">
+
+                <img src="/public/upload/{{this.item.filename}}" alt="">
+            </div>
+            <div class="cart-product-name">
+                <div class="empty">Product</div>
+                <div>{{this.item.name}}</div>
+            </div>
+            <div class="cart-product-unit-p">
+                <div class="empty">Unit Price</div>
+               <div> N 300 </div>
+            </div>
+            <div class="cart-product-qty">
+        <div class="empty">Qty</div>
+               <div class="operation">
+                <a href="/reduce/{{this.item._id}}" class="subtract">-</a> 
+                <span>{{this.qty}}</span> 
+                <a href="/add/{{this.item._id}}" class="addition">+</a>
+               </div>
+            </div>
+            <div class="cart-product-subtotal">
+                <div class="empty">Subtotal</div>
+               <div> <del style="text-decoration-style:double;">N</del> {{this.price}} </div>
+            </div>
+            <div class="cancelled">
+                <div style="height:0; width: 0;" class="empty"></div>
+                <a href="/remove/{{this.item._id}}">Delete</a>
+                
+            </div>
+        </div>
+        {{/each}}
+        {{!-- the line below --}}
+        <div class="style-below"></div>
+         <div class="cart-subset">
+        <div class="checkout-info">
+            <div class="total"><del style="text-decoration-style:double;">N</del> {{this.totalPrice}}</div>
+            <div class="shipping">shipping: free Shipping</div>
+            <div class="supported-cards">
+                <img src="/public/images/debit copy.jpg" alt="supported cards">
+            </div>
+            <a href="/shop/checkout" class="checkout" >
+                Checkout
+            </a>
+        </div>
+        <div class="contact-cart">
+            <h4>inqire on:-</h4>
+            <div class="cart-p"> <img src="/public/icons/phone.png" alt="">+234 701 191 1909</div>
+            <div class="cart-em"> <img src="/public/icons/download-3.png" alt=""> Outaracollection@gmail.com</div>
+            <div class="cart-address"> <img src="/public/icons/address.png" alt=""> Dawaki Qtrs Near Alpha Juction</div>
+            <div class="cart-social">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-telegram"></i>
+            </div>
+        </div>
+        
+         </div>
+
+    </div>
+</div>
+{{else}} 
+<div class="entire-empty-cart">
+<div class="empty-cart">
+  <img src="/public/images/empty.jpg" alt="">
+  <a href="/">want to add ?</a>
+</div>
+</div>
+
+{{/if}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- {{#if products}}
+<div class=" cart-grid">
+  <div class="cart-item">
+  <table class="table" >
+    <tr class="table-head">
+    <td>item</td>
+    <td>quantity</td>
+    <td>price</td>
+    </tr>
+    
+    {{#each products}}
+        <tr class="table-row">
+      <td class="item">
+        <img src="../public/images/logo9_5_183714.png" alt="" class="img item-img img-thumbnail">
+        <div class="item-info">
+          <span>name:</span> {{this.item.name}} <br/>
+          <span>type:</span> Cloth <br/>
+          <span>color:</span>Red 
+        </div>
+         <div class="item-name">{{this.item.name}}</div>
+      </td>
+      <td class="quantity">
+        <ul class="ctrl">
+          <li class=" qty"> {{this.qty}}</li>
+          <li class="text-light bg-success plus">+</li>
+          <li class="text-light bg-primary minus">-</li>
+        </ul>
+      </td>
+      <td> <del style="text-decoration-style:double;">N</del> {{this.price}}</td>
+      <td class="text-danger" style="cursor:pointer;">X</td>
+    </tr>
+    {{/each}}
+  </table>
+</div>
+
+<div class="cal-sec">
+  <div class="secs cart-contact">
+    <p class="">contact for Oders</p>
+    <p>call +234 711911909</p>
+    <p>armanviruse@gmail.com</p>
+    
+  </div>
+  <div class="secs">
+    <p>price <del>N</del> {{this.totalPrice}}</p>
+  <p>shipping <del>N</del> 1300</p>
+  <a href="/shop/checkout" class="btn btn-style">checkout</a>
+  </div>
+  <div class="secs">
+    <img class="img img-fluid debit" src="/public/images/debit copy.jpg" alt="">
+  </div>
+  
+
+</div>
+</div>
+
+{{else}}
+<h3 class="text text-center text-primary">you have no item added here in the cart</h3>
+
+{{/if}} --}}
+
+
+
+
+
+{{!-- second trial that being comment out --}}
+
+
+
+{{!-- {{#if products}}
+<div class="row">
+      {{#each products}}
+
+<div class="col-md-6">
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">{{this.item.name}}</h6>
+              
+            </div>
+            <div class="badge bg-light">{{this.qty}}</div>
+            <span class="text-muted">${{this.price}}</span>
+          </li>
+          
+         <div class="row">
+           <a href="#" class="btn btn-light col-md-4">remove single</a> ||
+            <a href="#" class="btn btn-light col-md-4">remove all</a>
+         </div>
+          
+            
+        </ul>
+
+      </div>
+      {{/each}}
+    </div>
+    <hr>
+    <div><span>Total (USD)</span>
+            <strong>{{totalPrice}}</strong>
+          </li>
+          
+          </div>
+<a href="/shop/checkout" class="btn btn-success">Purchase</a>
+{{else}}
+<h3>you have no item added here in the cart</h3>
+
+{{/if}} --}}
+
+
+
+
+
+  {{!-- <div class="cart-control">
+  <ul class="control">
+    <li class="ctr-li"><a class="btn btn-default" href=""></a>Increase</li>
+    <li class="ctr-li"><a class="btn btn-default" href=""></a>Decrease</li>
+    <li class="ctr-li"><a class="btn btn-default" href=""></a>Delete</li>
+  </ul>
+  </div> --}}

@@ -1,0 +1,104 @@
+
+
+<link rel="stylesheet" href="/public/css/profile_admin.css">
+
+
+
+<style>
+ .main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+</style>
+
+<div class="text-center body-001">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link " href="/"> <i class="fa fa-home"></i> </a>
+        <a class="nav-link " href="/admin">Admin</a>
+        <a class="nav-link active" href="/admin/orders-view">Orders</a>
+        <a class="nav-link" href="/stats">Statistics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover main">
+    
+      
+ 
+   {{#if oders}}
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+          <div>
+      {{#if error_msg}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{this.success_msg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="clsoe">
+            <span aria-hiden="true">&times;</span>
+        </button>
+
+    </div>
+    {{/if}}
+
+          {{#if success_msg}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{this.success_msg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="clsoe">
+            <span aria-hiden="true">&times;</span>
+        </button>
+
+    </div>
+    {{/if}}
+    </div>
+    <h6 class="border-bottom border-gray pb-2 mb-0">All Orders</h6>
+     {{#each oders}}
+    <div class="media text-muted pt-3">
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <p class="discript"><span class="order-span-left" >customers name :</span> <span class="order-span-right">{{this.name}}</span></p>
+        <p class="discript"><span class="order-span-left">paymentId :</span> <span class="order-span-right">{{this.paymentId}}</span></p>
+
+          {{#each this.cart.items}}
+
+            <div class="media text-muted pt-3">
+     <div class="imaigi">
+       <img src="/public/upload/{{this.item.filename}}" alt="">
+     </div>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        {{!-- <small class="d-block text-gray-dark">{{this._id}}</small> --}}
+        <p class="discript"><span class="order-span-left" > product name :</span> <span class="order-span-right">{{this.item.name}}</span></p>
+        <p class="discript"><span class="order-span-left">price :</span> <span class="order-span-right">{{this.item.price}}</span></p>
+        <p class="discript"><span class="order-span-left">Type :</span> <span class="order-span-right">{{this.item.type}}</span></p>
+        <p class="discript"><span class="order-span-left">Color :</span> <span class="order-span-right">{{this.item.colors}}</span></p>
+        <p class="discript"><span class="order-span-left">Quantity</span> <span class="order-span-right">{{this.qty}}</span></p>
+      </div>
+    </div>
+
+          {{/each}}
+
+        <p class="discript"><span class="order-span-left">Delevery Address :</span> <span class="order-span-right">{{this.address}}</span></p>
+        <p class="discript"><span class="order-span-left">Ordered Date</span> <span class="order-span-right">{{this.date}}</span></p>
+        <div class="admin-remove">
+        <a class="text-warning" href="/admin/remove/oder/{{this._id}}">Achieve Order</a>
+      </div>
+      </div>
+    </div>
+    {{/each}}
+
+    <small class="d-block text-right mt-3">
+      <a href="#">Orders</a>
+    </small>
+  </div>
+  {{else}}
+
+  <h1>No Order Have being Made Yet</h1>
+   {{/if}}
+
+    
+  </main>
+
+</div>
+</div>

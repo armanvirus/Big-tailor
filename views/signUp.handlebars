@@ -1,0 +1,89 @@
+  <header>
+    <div class="navbar navbar-light bg-light shadow-sm fixed-top" id="bar">
+      <div class=" text   grid">
+        <div class="title"> Gigtailor <img src="/public/images/logo9.jpeg" alt=""></div>
+        <div class="links"> <ul class="n-l">
+          <li id="search"><i class="fa fa-search"></i> <input type="text" placeholder='Search Here....' class="bg-light" id="searcher"></li>
+          <li><a href="/" class="hea"><i class="fa fa-home"></i>Home</a></li>
+          <li><a href="/cart-list" class="hea"><i class="fa fa-shopping-cart"></i>Cart <span class="badge bg-dark text-light">{{session.cart.totalQty}}</span></a></li>
+          <li><a href="/contact" class="hea"><i class="fa fa-address-book"></i>Contact</a></li>
+          <li><a href="/About" class="hea"> <i class="fa fa-info"></i>About</a></li>
+          <li><a href="#" class="hea" id="account"> <i class="fa fa-user"></i>Profile</a>
+
+          </li>
+          
+        </ul>
+        <div class="log-hide">
+          <div id="singin"><a href="/login/form">Login</a></div>
+          <div id="register"><a href="/singUp/form">Register</a></div>
+        </div>
+        </div>
+
+        <div class="manu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="displayer">
+
+    </div>
+
+
+      <div class="down-hide">
+        <div class="mobile-nav">
+          <ul>
+            <li id="search"><i class="fa fa-search"></i> <input type="text" placeholder='Search Here....' class="bg-light"></li>
+            <li class="mobile-list"><a href="/">Home </a> <i class="fa fa-home r-icon" ></i></li>
+            <li class="mobile-list"><a href="/cart-list">Cart</a> <i class="fa fa-shopping-cart r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Contact</a> <i class="fa fa-address-book r-icon"></i></li>
+            <li class="mobile-list"><a href="#">About</a> <i class="fa fa-info r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Profile</a> <i class="fa fa-user r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Login</a> <i class="fa fa-sign-in r-icon"></i></li>
+            <li class="mobile-list"><a href="#">Register</a> <i class="fa fa-sign-in-alt r-icon"></i></li>
+  
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+
+<div class="wrapper">
+  <form class="form-signin" method="post" action="/signuP/post">
+  <div class="text-center mb-4">
+    <div class="user-icon">
+    <i class="fas fa-user fa-2x  mt-4 pt-2"></i>
+    </div>
+    <h3 class="h3 mb-3 mt-2 h3-style" >Please sign in</h3>
+    <p>{{> messages }}</p>
+  </div>
+
+  <div class="form-label-group">
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputEmail">Enter email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input name="name" type="text" id="inputName" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputEmail">Enter Your Name</label>
+  </div>
+
+  <div class="form-label-group">
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Enter password</label>
+  </div>
+  
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-block btn-style" type="submit" >Register</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; Arman 2019-2020</p>
+
+</div>

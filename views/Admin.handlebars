@@ -1,0 +1,177 @@
+<link rel="stylesheet" href="/public/css/profile_admin.css">
+
+
+<div class="text-center body-001">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link " href="/"> <i class="fa fa-home"></i> </a>
+        <a class="nav-link active" href="/admin">Admin</a>
+        <a class="nav-link" href="/admin/orders-view">Orders</a>
+        <a class="nav-link" href="/stats">Statistics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover main">
+    <div class="main-left-sec">
+      
+<div class=" my-3 p-3 bg-white rounded shadow-sm">
+  <form class="" method="post" enctype="multipart/form-data" action="/admin">
+      <div>
+      {{#if error_msg}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{this.success_msg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="clsoe">
+            <span aria-hiden="true">&times;</span>
+        </button>
+
+    </div>
+    {{/if}}
+
+          {{#if success_msg}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{this.success_msg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="clsoe">
+            <span aria-hiden="true">&times;</span>
+        </button>
+
+    </div>
+    {{/if}}
+    </div>
+
+    <h1 class="h3 ml-4 mb-3 font-weight-normal">Uplolad A Product</h1>
+    <div class="form-row">
+      <div class="form-group col-md-6"> <label for="inputEmail4">Product's Image</label> 
+      <input name="image" type="file" class="form-control" id="inputEmail4" placeholder="Image"> </div>
+      <div class="form-group col-md-6"> <label for="inputPassword4">Name</label> 
+      <input name="name" type="text" class="form-control" id="inputPassword4" placeholder="product's Name"> </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6"> 
+          <label for="inputEmail4">Price</label> 
+          <input name="price" type="Text" class="form-control" id="inputEmail4" placeholder="product's price"> 
+        </div>
+      <div class="form-group col-md-6"> <label for="inputPassword4">Type</label> 
+      
+      <select name="type" id="inputPassword4" class="form-control">
+          <option selected>Choose...</option>
+          
+          <option value="yard">yard</option>
+          <option value="jumper">jumper</option>
+          <option value="half jumper">Halp jumper</option>
+          <option value="cap">Cap</option>
+          <option value="show">Shoe</option>
+          <option value="watch">Watch</option>
+        </select>
+      
+       </div>
+    </div>    
+
+    <div class="form-group"> 
+        <label for="inputAddress">Description</label> 
+        <textarea type="text" name="description" class="form-control" id="inputAddress" >
+        write the product's description </textarea> 
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12">  
+          <input type="checkbox" name="colors" value="Red" > Red
+          <input type="checkbox" name="colors" value="Blue" > Blue
+          <input type="checkbox" name="colors" value="Green" > Green
+          <input type="checkbox" name="colors" value="Black" > Black
+          <input type="checkbox" name="colors" value="white" > White
+      </div>
+
+      
+    </div> <button type="submit" class="btn btn-success">Uplolad</button>
+  </form>
+
+
+</div>
+    </div>
+    <div class="main-right-sec">
+      
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+    <img class="mr-3" src="../assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
+    <div class="lh-100">
+      <h6 class="mb-0 text-white lh-100">Uploaded Products</h6>
+      <small>Since 2011</small>
+    </div>
+  </div>
+   {{#if products}}
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <div>
+      {{#if error_msg}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{this.success_msg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="clsoe">
+            <span aria-hiden="true">&times;</span>
+        </button>
+
+    </div>
+    {{/if}}
+
+          {{#if success_msg}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{this.success_msg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="clsoe">
+            <span aria-hiden="true">&times;</span>
+        </button>
+
+    </div>
+    {{/if}}
+    </div>
+    <h6 class="border-bottom border-gray pb-2 mb-0">Recent & Old Ones</h6>
+     {{#each products}}
+    <div class="media text-muted pt-3">
+     <div class="imaigi">
+       <img src="/public/upload/{{this.filename}}" alt="">
+     </div>
+      <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <small class="d-block text-gray-dark">{{this._id}}</small>
+        <p class="discript"><span class="order-span-left" >name :</span> <span class="order-span-right">{{this.name}}</span></p>
+        <p class="discript"><span class="order-span-left">price :</span> <span class="order-span-right">{{this.price}}</span></p>
+        <p class="discript"><span class="order-span-left">Type :</span> <span class="order-span-right">{{this.type}}</span></p>
+        <p class="discript"><span class="order-span-left">Color :</span> <span class="order-span-right">{{this.colors}}</span></p>
+        <p class="discript"><span class="order-span-left">likes</span> <span class="order-span-right"></span></p>
+      <div class="admin-remove">
+        <a class="text-warning" href="/admin/remove/{{this._id}}">Delete it Database</a>
+      </div>
+      </div>
+    </div>
+    {{/each}}
+
+    <small class="d-block text-right mt-3">
+      <a href="#">All products</a>
+    </small>
+  </div>
+
+  {{else}}
+  <h1>No Product Uploaded Yet</h1>
+   {{/if}}
+
+    </div>
+  </main>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
