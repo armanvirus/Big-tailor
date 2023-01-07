@@ -92,8 +92,8 @@ app.use((req,res,next)=>{
 
 app.use(morgan('dev'));
 
-
-app.get('/', getReq.main)
+app.get("/", (req,res)=>{ res.send("<h1> hello am here watching you</h1>")})
+//app.get('/', getReq.main)
 
 app.get('/login/form', forwardAuthenticated, getReq.login)
 
