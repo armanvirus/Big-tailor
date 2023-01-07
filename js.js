@@ -391,4 +391,4 @@ app.post('/shop/checkout', ensureAuthenticated, (req,res)=>{
 app.post('/addCart', ensureAuthenticated,  postReq.addCart)
 
 
-app.listen(300, console.log('the server is working'))
+app.listen(process.env.PORT || 300, console.log('the server is working'))
