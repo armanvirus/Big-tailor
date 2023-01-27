@@ -7,6 +7,7 @@ Such as cloth, shoes, bags and many more.
 1. User registration
 1. User Login
 1. Forgot password
+1. Liking an item
 1. Scrolling through the items in the home page
 1. Preview of single item with it's full description on a standalone page together with similar items.
 1. Ability to add items to a cart
@@ -22,3 +23,10 @@ and also gives ability to reduce the quantity.
  7. The admin dashboard is where authority is granted for item uploading, updating and deleting.
  8. The admin dashboard shows all orders made by users with item overview and order date and time altogether with user's details show make the order.
  9. An average user profile which contains orders he make and and it's shipping details.
+
+### Stack used
+* Node/Expressjs
+* Mongodb 
+* Handlebars as templating engine
+* CSS & Bootstrap
+* jQuery & Ajax
