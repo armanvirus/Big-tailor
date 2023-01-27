@@ -30,3 +30,23 @@ and also gives ability to reduce the quantity.
 * Handlebars as templating engine
 * CSS & Bootstrap
 * jQuery & Ajax
+
+To get started
+Clone the repo by running the code below
+```
+ git clone 
+```
+
+To install dependencies
+navigate to the root directory and run
+
+```
+npm install
+```
+
+To start the app
+then run 
+```
+Node js
+or nodemon js
+```
