@@ -34,7 +34,7 @@ and also gives ability to reduce the quantity.
 To get started
 Clone the repo by running the code below
 ```
- git clone 
+ git clone https://github.com/armanvirus/Big-tailor.git
 ```
 
 To install dependencies
@@ -50,3 +50,4 @@ then run
 Node js
 or nodemon js
 ```
+you have something more to contribute you are welcome 🙏
