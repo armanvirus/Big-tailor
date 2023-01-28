@@ -27,8 +27,9 @@ const express = require('express'),
             const Oder = require('./models/Oders');
             console.log()
 
-
+require('dotenv').config()
 /*connecting the mongoose*/
+console.log(process.env.MONGOURI)
 mongoose.connect(process.env.MONGOURI, { useNewUrlParser: true,useUnifiedTopology: true  })
 .then( console.log("mongoose is connected"));
 //console.log(exphbs)
@@ -94,6 +95,7 @@ app.use(morgan('dev'));
 
 
 app.get('/', getReq.main)
+
 
 app.get('/login/form', forwardAuthenticated, getReq.login)
 
@@ -389,6 +391,8 @@ app.post('/shop/checkout', ensureAuthenticated, (req,res)=>{
  
 })
 app.post('/addCart', ensureAuthenticated,  postReq.addCart)
-
-
-app.listen(300, console.log('the server is working'))
+app.get("*", (req,res)=>{
+    res.send("404 page not found")
+})
+const PORT = process.env.PORT || 300
+app.listen(PORT, console.log(`the server is working on ${PORT}`))
