@@ -391,14 +391,14 @@ app.post('/shop/checkout', ensureAuthenticated, (req,res)=>{
  
 })
 app.post('/addCart', ensureAuthenticated,  postReq.addCart)
-<<<<<<< HEAD
+
 app.get("*", (req,res)=>{
     res.send("404 page not found")
 })
 const PORT = process.env.PORT || 300
 app.listen(PORT, console.log(`the server is working on ${PORT}`))
-=======
+
 
 
 app.listen(process.env.PORT || 300, console.log('the server is working'))
->>>>>>> refs/remotes/origin/main
+
