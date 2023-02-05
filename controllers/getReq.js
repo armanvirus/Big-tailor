@@ -30,8 +30,8 @@ module.exports = {
     products:(req,res)=>{
     Products.find({},function(err,product){
 if(err) throw err;
-// res.render("products", {product})
-res.send(product)
+res.render("products", {product})
+// res.send(product)
     })
     
 
